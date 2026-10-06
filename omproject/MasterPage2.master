@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin Dashboard</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000814; /* Dark Blue */
+            color: white;
+        }
+
+        /* Dashboard Header */
+        h2 {
+            text-align: center;
+            background: #001d3d; /* Deep Navy */
+            color: #ffd60a; /* Golden Yellow */
+            padding: 15px;
+            margin: 0;
+        }
+
+        /* Navigation Menu */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #001d3d; /* Deep Navy */
+            text-align: center;
+        }
+
+        ul li {
+            display: inline-block;
+            margin: 0;
+        }
+
+        ul li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #ffd60a; /* Golden Yellow */
+            font-size: 16px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        ul li a:hover {
+            background: #003566; /* Dark Teal */
+            color: #ffc300; /* Bright Yellow */
+        }
+
+        /* Main Content */
+        .content-container {
+            width: 80%;
+            margin: 20px auto;
+            background: #001d3d; /* Deep Navy */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(255, 211, 10, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <h2>Plaza theater</h2>
+
+        <!-- Navigation Menu -->
+        <ul>
+            <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="Movies.aspx">Movies</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="MyTickets.aspx">My Tickets</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="UHistory.aspx">My History</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="Login.aspx">Logout</asp:HyperLink></li>
+        </ul>
+
+        <!-- Main Content Area -->
+        <div class="content-container">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

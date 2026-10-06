@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Master Page</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('movie.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffd60a; /* Golden Yellow Text */
+}
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd60a; /* Golden Yellow */
+            padding: 1rem 2rem;
+            background-color: #001d3d; /* Deep Navy */
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #003566; /* Dark Teal */
+            padding: 1rem;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #ffc300; /* Bright Yellow */
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #ffd60a; /* Golden Yellow on Hover */
+        }
+        
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+        form {
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    padding: 2rem;
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    width: 80%; /* Adjust width */
+    margin: auto; /* Centering the form */
+}
+        footer {
+            background-color: #001d3d; /* Deep Navy */
+            text-align: center;
+            padding: 1rem;
+            color: #ffd60a; /* Golden Yellow */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="logo">Plaza Theater</div>
+    <nav>
+        <ul>
+            <li><a href="Home.aspx">Home</a></li>
+             <li><a href="Contact.aspx">Contact</a></li>
+            <li><a href="Login.aspx">Login</a></li>
+            <li><a href="Signup.aspx">Sign Up</a></li>
+            <li><a href="AdminLogin.aspx">Admin</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <form id="form1">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </form>
+    </div>
+    <footer>
+        &copy; 2025 My Website. All rights reserved.
+    </footer>
+</body>
+</html>

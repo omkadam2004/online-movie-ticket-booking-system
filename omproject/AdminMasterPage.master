@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="AdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin Dashboard</title>
+    
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Dashboard Header */
+        h2 {
+            text-align: center;
+            background: #007bff;
+            color: white;
+            padding: 15px;
+            margin: 0;
+        }
+
+        /* Navigation Menu */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: #343a40;
+            text-align: center;
+        }
+
+        ul li {
+            display: inline-block;
+            margin: 0;
+        }
+
+        ul li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        ul li a:hover {
+            background: #0056b3;
+        }
+
+        /* Main Content */
+        .content-container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <h2>Admin Dashboard</h2>
+
+        <!-- Navigation Menu -->
+        <ul>
+            <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="MovieListing.aspx">Manage Movies</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="AdminTicketConfirmation.aspx">Sales</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="AllTickets.aspx">Sale-Tickets</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="AdminMessage.aspx">Contacts</asp:HyperLink></li>
+            <li><asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="Login.aspx">Logout</asp:HyperLink></li>
+        </ul>
+
+        <!-- Main Content Area -->
+        <div class="content-container">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
